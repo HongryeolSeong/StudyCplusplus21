@@ -17,8 +17,9 @@ public:
 	}
 
 	// 새로이 동적 할당 하는 복사 생성자
-	// &를 안쓰는경우 무한 생성자 호출 되므로
-	// &를 써서 
+	// 복사생성자의 타입을 가지고 있으므로 
+	// 무한반복을 피하기 위해(참조자 안쓰면 생성자 - 복사생성자순으로 무한호출) 
+	// 참조자(&)연산을 사용함
 	Human(const Human& other) {
 		pname = new char[strlen(other.pname) + 1];
 		strcpy(pname, other.pname);
