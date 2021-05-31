@@ -1,6 +1,7 @@
 #include <stdio.h>
 
 int Add(int a, int b);
+//int Add(const int a, const int b); // 사용 가능
 int Add(int a, int b, int c);
 double Add(double a, double b);
 
