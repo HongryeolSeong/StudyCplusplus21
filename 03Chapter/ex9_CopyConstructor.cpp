@@ -20,6 +20,8 @@ public:
 	// 복사생성자의 타입을 가지고 있으므로 
 	// 무한반복을 피하기 위해(참조자 안쓰면 생성자 - 복사생성자순으로 무한호출) 
 	// 참조자(&)연산을 사용함
+	// 원래는 초깃값 없이 레퍼런스를 선언할 수 없지만, 
+	// 함수형식의 인수로 사용되었으므로 초기화 안해도 됨(main이나 함수안에서 쓰려면 초기화 필요).
 	Human(const Human& other) {
 		pname = new char[strlen(other.pname) + 1];
 		strcpy(pname, other.pname);
