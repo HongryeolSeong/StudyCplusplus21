@@ -10,6 +10,7 @@ private:
 	int age;
 
 public:
+	// »ı¼ºÀÚ
 	Human(const char* aname, int aage) {
 		pname = new char[strlen(aname) + 1];
 		strcpy(pname, aname);
