@@ -6,31 +6,31 @@ Cpp Stucdy Repository
 
 ## Chapter_1 C언어의 확장🎯
 
-[C언어의 확장👉](https://github.com/HongryeolSeong/StudyC21/tree/main/01test "Chapter1")
+[C언어의 확장👉](https://github.com/HongryeolSeong/StudyCplusplus21/tree/main/01Chapter "Chapter1")
 <br>
 <br>
 
 ## Chapter_2 클래스🎯
 
-[클래스👉](https://github.com/HongryeolSeong/StudyC21/tree/main/02Chaapter "Chapter2")
+[클래스👉](https://github.com/HongryeolSeong/StudyCplusplus21/tree/main/02Chapter "Chapter2")
 <br>
 <br>
 
 ## Chapter_3 생성자🎯
 
-[생성자👉](https://github.com/HongryeolSeong/StudyC21/tree/main/03Chapter "Chapter3")
+[생성자👉](https://github.com/HongryeolSeong/StudyCplusplus21/tree/main/03Chapter "Chapter3")
 <br>
 <br>
 
 ## Chapter_4 캡슐화🎯
 
-[캡슐화👉](https://github.com/HongryeolSeong/StudyC21/tree/main/04Chapter "Chapter4")
+[캡슐화👉](https://github.com/HongryeolSeong/StudyCplusplus21/tree/main/04Chapter "Chapter4")
 <br>
 <br>
 
 ## Chapter_5 연산자 오버로딩🎯
 
-[연산자 오버로딩👉](https://github.com/HongryeolSeong/StudyC21/tree/main/05Chapter "Chapter5")
+[연산자 오버로딩👉](https://github.com/HongryeolSeong/StudyCplusplus21/tree/main/05Chapter "Chapter5")
 <br>
 <br>
 
