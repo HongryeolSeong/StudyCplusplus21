@@ -15,7 +15,7 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="ex11_InitRefMember.cpp">
+    <ClCompile Include="ex9_CopyConstructor.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
   </ItemGroup>

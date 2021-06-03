@@ -47,6 +47,7 @@ int main()
 	Human kang("°­°¨Âù", 1424);
 	Human boy = kang;
 
+
 	printHuman(boy);
 
 	return 0;
