@@ -15,7 +15,7 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="summary.cpp">
+    <ClCompile Include="ex3_Overridable.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
   </ItemGroup>

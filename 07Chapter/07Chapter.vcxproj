@@ -19,13 +19,13 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="summary.cpp" />
+    <ClCompile Include="ex3_Overridable.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
-    <ProjectGuid>{d02adaba-14e1-4ff8-8807-b5883b4c2bb4}</ProjectGuid>
-    <RootNamespace>My06Chapter</RootNamespace>
+    <ProjectGuid>{5ea4cc92-9c01-460a-a74c-5427474b7692}</ProjectGuid>
+    <RootNamespace>My07Chapter</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
