@@ -18,11 +18,14 @@
       <Platform>x64</Platform>
     </ProjectConfiguration>
   </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="ex11_NonTypeArgument.cpp" />
+  </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
-    <ProjectGuid>{5ea4cc92-9c01-460a-a74c-5427474b7692}</ProjectGuid>
-    <RootNamespace>My07Chapter</RootNamespace>
+    <ProjectGuid>{f5208b07-2609-4b94-944f-cd139e4d40b6}</ProjectGuid>
+    <RootNamespace>My08Chapter</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
