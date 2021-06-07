@@ -36,19 +36,19 @@ Cpp Stucdy Repository
 
 ## Chapter_6 상속🎯
 
-[상속👉](https://github.com/HongryeolSeong/StudyC21/tree/main/06Chapter "Chapter6")
+[상속👉](https://github.com/HongryeolSeong/StudyCplusplus21/tree/main/06Chapter "Chapter6")
 <br>
 <br>
 
 ## Chapter_7 다형성🎯
 
-[다형성👉](https://github.com/HongryeolSeong/StudyC21/tree/main/07Chapter "Chapter7")
+[다형성👉](https://github.com/HongryeolSeong/StudyCplusplus21/tree/main/07Chapter "Chapter7")
 <br>
 <br>
 
 ## Chapter_8 템플릿🎯
 
-[템플릿👉](https://github.com/HongryeolSeong/StudyC21/tree/main/08Chapter "Chapter8")
+[템플릿👉](https://github.com/HongryeolSeong/StudyCplusplus21/tree/main/08Chapter "Chapter8")
 <br>
 <br>
 
