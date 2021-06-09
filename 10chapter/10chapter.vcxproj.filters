@@ -15,7 +15,7 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="ex15_exretry.cpp">
+    <ClCompile Include="ex14_MemPtrInherit.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
   </ItemGroup>

@@ -19,13 +19,13 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="ex15_exretry.cpp" />
+    <ClCompile Include="ex14_MemPtrInherit.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
-    <ProjectGuid>{00b8d8f6-af84-4357-b7ee-3cb51c0cc3f8}</ProjectGuid>
-    <RootNamespace>My09Chapter</RootNamespace>
+    <ProjectGuid>{66f7591c-e860-498c-ad31-2f300727c846}</ProjectGuid>
+    <RootNamespace>My10chapter</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
