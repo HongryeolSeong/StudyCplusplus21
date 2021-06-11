@@ -425,16 +425,16 @@ int main()
 	Initialize();	// 카드 섞은 후 초기화
 
 	// 게임 시작
-	for (SouthTurn = true; !Deck.IsEmpty(); SouthTurn = !SouthTurn) 
+	for (SouthTurn = true; !Deck.IsEmpty(); SouthTurn = !SouthTurn)
 	{
 		DrawScreen();
-		if (SouthTurn) 
+		if (SouthTurn)
 		{
 			Turn = &South;
 			TurnPae = &SouthPae;
 			OtherPae = &NorthPae;
 		}
-		else 
+		else
 		{
 			Turn = &North;
 			TurnPae = &NorthPae;
@@ -443,10 +443,10 @@ int main()
 
 		sprintf(Mes, "내고 싶은 화투를 선택하세요(1~%d,0:종료) ", Turn->GetNum());
 		ch = InputInt(Mes, 0, Turn->GetNum());
-		if (ch == 0) 
+		if (ch == 0)
 		{
 			if (InputInt("정말 끝낼겁니까?(0:예,1:아니오)", 0, 1) == 0)
-				return;
+				return 0;
 			else
 				continue;
 		}
@@ -454,7 +454,205 @@ int main()
 		// 플레이어가 카드 한 장 냄
 		UserTriple = DeckTriple = false;	// 초기상태
 		UserIdx = ch - 1;
-		UserCard
+		UserCard = Turn->GetCard(UserIdx);
+		SameNum = Blanket.FindSameCard(UserCard, arSame);
+
+		switch (SameNum)
+		{
+		case 0:
+			UserSel = -1;
+			Blanket.InsertCard(Turn->RemoveCard(UserIdx));
+			DrawScreen();
+			break;
+		case 1:
+			UserSel = arSame[0];
+			break;
+		case 2:
+			if (Blanket.GetCard(arSame[0]) == Blanket.GetCard(arSame[1]))
+			{
+				UserSel = arSame[0];
+			}
+			else
+			{
+				Blanket.DrawSelNum(arSame);
+				sprintf(Mes, "어떤 카드를 선택하시겠습니까?(1~%d)", SameNum);
+				UserSel = arSame[InputInt(Mes, 1, SameNum) - 1];
+			}
+			break;
+		case 3:
+			UserSel = arSame[1];
+			UserTriple = true;
+			break;
+		}
+
+		if (UserSel != -1)
+		{
+			Blanket.DrawTempCard(UserSel, UserCard);
+		}
+
+		delay(Speed);
+
+		// 데크에서 한 장 뒤집기
+		Deck.Draw(true);
+		delay(Speed);
+		DeckCard = Deck.Pop();
+		SameNum = Blanket.FindSameCard(DeckCard, arSame);
+
+		switch (SameNum)
+		{
+		case 0:
+			DeckSel = -1;
+			break;
+		case 1:
+			DeckSel = arSame[0];
+			if (DeckSel == UserSel)
+			{
+				if (Deck.IsNotLast())
+				{
+					Blanket.InsertCard(DeckCard);
+					Blanket.InsertCard(Turn->RemoveCard(UserIdx));
+					OutPrompt("설사했습니다.", PromptSpeed);
+					continue;
+				}
+				else
+				{
+					DeckSel = -1;
+				}
+			}
+			break;
+		case 2:
+			if (UserSel == arSame[0])
+			{
+				DeckSel = arSame[1];
+			}
+			else if (UserSel == arSame[1])
+			{
+				DeckSel = arSame[0];
+			}
+			else
+			{
+				if (Blanket.GetCard(arSame[0]) == Blanket.GetCard(arSame[1]))
+				{
+					DeckSel = arSame[0];
+				}
+				else
+				{
+					Blanket.DrawSelNum(arSame);
+					sprintf(Mes, "어떤 카드를 선택하시겠습니까?(1~%d)", SameNum);
+					DeckSel = arSame[InputInt(Mes, 1, SameNum) - 1];
+				}
+			}
+			break;
+		case 3:
+			DeckSel = arSame[1];
+			DeckTriple = true;
+			break;
+		}
+
+		if (DeckSel != -1)
+		{
+			Blanket.DrawTempCard(DeckSel, DeckCard);
+		}
+
+		Deck.Draw(false);
+		delay(Speed);
+
+		// 일치하는 카드는 수거함(세 장 먹은 경우는 전부 수거)
+		if (UserSel != -1)
+		{
+			if (UserTriple)
+			{
+				for (i = 0; i < 3; i++)
+				{
+					TurnPae->InsertCard(Blanket.RemoveCard(UserSel - 1));
+				}
+			}
+			else
+			{
+				TurnPae->InsertCard(Blanket.RemoveCard(UserSel));
+			}
+
+			TurnPae->InsertCard(Turn->RemoveCard(UserIdx));
+
+			if (DeckSel != -1 && DeckSel > UserSel)
+			{
+				DeckSel -= (UserTriple ? 3 : 1);
+			}
+		}
+
+		if (DeckSel != -1)
+		{
+			if (DeckTriple)
+			{
+				for (i = 0; i < 3; i++)
+				{
+					TurnPae->InsertCard(Blanket.RemoveCard(DeckSel - 1));
+				}
+			}
+			else
+			{
+				TurnPae->InsertCard(Blanket.RemoveCard(DeckSel));
+			}
+
+			Turn->InsertCard(DeckCard);
+		}
+		else
+		{
+			Blanket.InsertCard(DeckCard);
+		}
+
+		// 쭉, 따닥, 싹쓸이 조건을 점검하고 상대방의 피를 뺏는다.
+		nSnatch = 0;
+		if (Deck.IsNotLast())
+		{
+			if (UserSel == -1 && SameNum == 1 && DeckCard.GetNumber() == UserCard.GetNumber())
+			{
+				nSnatch++;
+				OutPrompt("쪽입니다.", PromptSpeed);
+			}
+			if (UserSel == -1 && SameNum == 2 && DeckCard.GetNumber() == UserCard.GetNumber())
+			{
+				nSnatch++;
+				OutPrompt("따닥입니다.", PromptSpeed);
+			}
+			if (Blanket.GetNum() == 0)
+			{
+				nSnatch++;
+				OutPrompt("싹슬이입니다.", PromptSpeed);
+			}
+			if (UserTriple || DeckTriple)
+			{
+				OutPrompt("한꺼번에 세 장을 먹었습니다.", PromptSpeed);
+				nSnatch += UserTriple + DeckTriple;
+			}
+		}
+
+		for (i = 0; i < nSnatch; i++)
+		{
+			TurnPae->InsertCard(OtherPae->RemovePee());
+		}
+
+		// 점수 계산 및 고/스톱 여부 질문
+		NewScore = TurnPae->CalcScore();
+
+		if (Deck.IsNotLast() && NewScore > TurnPae->OldScore)
+		{
+			DrawScreen();
+
+			if (InputInt("추가 점수를 획득했습니다.(0:스톱, 1:계속)", 0, 1) == 1)
+			{
+				TurnPae->OldScore = NewScore;
+				TurnPae->IncreaseGo();
+			}
+			else
+			{
+				break;
+			}
+		}
+	}
+
+	DrawScreen();
+	OutPrompt("게임이 끝났습니다.", 0);
 
 	return 0;
 }
