@@ -1,6 +1,6 @@
 # StudyCplusplus21
 PKNU IoT 개발자 과정   
-Cpp Stucdy Repository
+Cpp Study Repository
 <br>
 <br>
 
