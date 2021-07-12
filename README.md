@@ -54,30 +54,18 @@ Cpp Stucdy Repository
 
 ## Chapter_9 예외 처리🎯
 
-[예외 처리👉](https://github.com/HongryeolSeong/StudyC21/tree/main/09Chapter "Chapter9")
+[예외 처리👉](https://github.com/HongryeolSeong/StudyCplusplus21/tree/main/09Chapter "Chapter9")
 <br>
 <br>
 
 ## Chapter_10 타입 정보🎯
 
-[타입 정보👉](https://github.com/HongryeolSeong/StudyC21/tree/main/10Chapter "Chapter10")
-<br>
-<br>
-
-## Chapter_11 네임스페이스🎯
-
-[네임스페이스👉](https://github.com/HongryeolSeong/StudyC21/tree/main/11Chapter "Chapter11")
+[타입 정보👉](https://github.com/HongryeolSeong/StudyCplusplus21/tree/main/10chapter "Chapter10")
 <br>
 <br>
 
 ## Chapter_12 표준 라이브러리🎯
 
-[표준 라이브러리👉](https://github.com/HongryeolSeong/StudyC21/tree/main/12Chapter "Chapter12")
-<br>
-<br>
-
-## Chapter_13 C++ 실습🎯
-
-[C++ 실습👉](https://github.com/HongryeolSeong/StudyC21/tree/main/13Chapter "Chapter13")
+[표준 라이브러리👉](https://github.com/HongryeolSeong/StudyCplusplus21/tree/main/12Chapter "Chapter12")
 <br>
 <br>
